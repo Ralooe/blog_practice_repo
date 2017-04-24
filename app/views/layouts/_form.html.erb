@@ -1,0 +1,21 @@
+<%= form_for @posts do |f| %>
+<% if @posts.errors.any? %>
+<h2><%= pluralize(@posts.errors.count, "error") %>, couldnt save</h2>
+<ul>
+	<% @posts.errors.fill_message do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+<br>
+<br>
+	<%= f.label :content, "write here" %>
+	<%= f.text_area :content %>
+<br>
+<br>
+
+<%= f.submit %>
+
+<% end %>
